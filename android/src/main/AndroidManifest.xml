@@ -16,7 +16,7 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.jiguang.jpush.JPushEventReceiver">
+        <receiver android:name="com.jiguang.jpush.JPushEventReceiver" android:exported="true">
             <intent-filter>
                 <action android:name="cn.jpush.android.intent.RECEIVE_MESSAGE" />
                 <category android:name="${applicationId}" />
@@ -28,7 +28,8 @@
         <service android:name=".JPushCustomService"
             android:enabled="true"
             android:exported="false"
-            android:process=":pushcore">
+            android:process=":pushcore"
+            android:exported="true">
             <intent-filter>
                 <action android:name="cn.jiguang.user.service.action" />
             </intent-filter>
